@@ -17,12 +17,13 @@ public class getMovePlayer implements Listener {
 
 	
 	public void checkWhereWalk(PlayerMoveEvent pm) {
-		if (main.time_world >= 18000 && main.time_world <= 7000) {
-			Location loc = pm.getTo();
+		if (main.time_world >= 0 && main.time_world <= 6000) {
+			Player p = pm.getPlayer();
+			Location loc = p.getLocation();
+			loc.setY(loc.getY() - 1);
 			Block bloc = loc.getBlock();
-			Player player = pm.getPlayer();
 			if (bloc.getLightLevel() == 15)
-				player.kickPlayer(player.getName());
+				p.kickPlayer(p.getName());
 		}
 	}
 }
