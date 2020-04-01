@@ -1,7 +1,9 @@
 package fr.eter.radiationzone;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -10,18 +12,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.eter.radiationzone.listener.getMovePlayer;
 import fr.eter.radiationzone.homemanagement.CommandDelHome;
 import fr.eter.radiationzone.homemanagement.CommandHome;
 import fr.eter.radiationzone.homemanagement.CommandSetHome;
 import fr.eter.radiationzone.listener.ListenerDamage;
 import fr.eter.radiationzone.listener.ListenerJoin;
 import fr.eter.radiationzone.listener.ListenerLeave;
+import fr.eter.radiationzone.listener.getMovePlayer;
+import fr.eter.radiationzone.tp.CommandTPA;
+import fr.eter.radiationzone.tp.CommandTPN;
+import fr.eter.radiationzone.tp.CommandTPY;
 
 public class RadiationZone extends JavaPlugin {
 	
 	public long time_world = 0;
 	private List<Player> Players = new ArrayList<Player>();
+	public Map<Player, Player> TPPlayers = new HashMap<>();
 	
 	@Override
 	public void onEnable() {
@@ -36,16 +42,18 @@ public class RadiationZone extends JavaPlugin {
 		Listener getDamage = new ListenerDamage();
 		getServer().getPluginManager().registerEvents(getDamage, this);
 
-		if (time_world == 36000)
+		if (time_world >= 30000) {
+			String toSend = "The rain will fall under 30 minutes";
 			for (Player player : Players)
-				player.sendTitle("The rain will fall in 30 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
-		if (time_world == 54000)
+				player.sendTitle(toSend, "Protect yourself if you don't want to die", 10, 80, 20);
+		}
+		if (time_world >= 54000)
 			for (Player player : Players)
-				player.sendTitle("The rain will fall in 15 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
-		if (time_world == 66000)
+				player.sendTitle("The rain will fall under 15 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
+		if (time_world >= 66000)
 			for (Player player : Players)
-				player.sendTitle("The rain will fall in 5 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
-		if (time_world == 72000) {
+				player.sendTitle("The rain will fall under 5 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
+		if (time_world >= 72000) {
 			Bukkit.getServer().getWorld(getName()).setThundering(true);
 			Bukkit.getServer().getWorld(getName()).setStorm(true);
 			Bukkit.getServer().getWorld(getName()).setWeatherDuration(6000);
@@ -61,12 +69,16 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("home").setExecutor(new CommandHome(this));
 		getCommand("sethome").setExecutor(new CommandSetHome(this));
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
-		getCommand("tpa").setExecutor(new CommandTPA());
+		getCommand("tpa").setExecutor(new CommandTPA(this));
+		getCommand("tpaccept").setExecutor(new CommandTPY(this));
+		getCommand("tpdecline").setExecutor(new CommandTPN(this));
 	}
 
 	private void GetTimeListener(RadiationZone radiationZone) {
 		World world = Bukkit.getServer().getWorld(getName());
-		time_world = world.getTime();
+		if (time_world >= 72000)
+			time_world = 0;
+		time_world = world.getFullTime();
 		return;
 	}
 	
