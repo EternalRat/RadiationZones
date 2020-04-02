@@ -41,6 +41,7 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
 		
 		GetTimeListener();
+		Bukkit.getPlayer("Rz_RazZer").sendMessage("Tick : " + time_world);
 		ListenerList();
 		Check_time_and_made_rain();
 	}
