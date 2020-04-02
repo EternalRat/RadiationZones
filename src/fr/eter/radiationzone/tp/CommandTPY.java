@@ -18,7 +18,7 @@ public class CommandTPY implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player && args.length == 1) {
-			Player player = (Player) sender;
+			Player player = (Player)sender;
 			if (main.TPPlayers.containsKey(player)) {
 				Location loc = player.getLocation();
 				Player firstplayer = main.TPPlayers.get(player);

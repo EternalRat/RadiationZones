@@ -17,7 +17,7 @@ public class CommandTPN implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
-		if (sender instanceof Player && args.length == 1) {
+		if (sender instanceof Player && args.length == 0) {
 			Player player = (Player) sender;
 			if (main.TPPlayers.containsKey(player)) {
 				Player firstplayer = main.TPPlayers.get(player);
