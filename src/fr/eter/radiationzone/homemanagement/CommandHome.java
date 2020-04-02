@@ -6,11 +6,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.eter.radiationzone.RadiationZone;
 
-public class CommandHome extends JavaPlugin implements CommandExecutor {
+public class CommandHome implements CommandExecutor {
 
 	private RadiationZone main;
 	

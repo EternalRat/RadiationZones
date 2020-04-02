@@ -75,7 +75,7 @@ public class RadiationZone extends JavaPlugin {
 	}
 
 	private void GetTimeListener(RadiationZone radiationZone) {
-		World world = Bukkit.getServer().getWorld(getName());
+		World world = Bukkit.getServer().getWorld("world");
 		if (time_world >= 72000)
 			time_world = 0;
 		time_world = world.getFullTime();
