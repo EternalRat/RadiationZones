@@ -41,12 +41,12 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
 		
 		GetTimeListener();
-		Bukkit.getPlayer("Rz_RazZer").sendMessage("Tick : " + time_world);
 		ListenerList();
 		Check_time_and_made_rain();
 	}
 
 	private void Check_time_and_made_rain() {
+		Bukkit.getPlayer("Rz_RazZer").sendMessage("Tick : " + time_world);
 		if (time_world >= 30000) {
 			String toSend = "The rain will fall under 30 minutes";
 			for (Player player : Players)
