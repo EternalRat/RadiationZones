@@ -70,8 +70,8 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("sethome").setExecutor(new CommandSetHome(this));
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
 		//getCommand("tpa").setExecutor(new CommandTPA(this));
-		getCommand("tpaccept").setExecutor(new CommandTPY(this));
-		getCommand("tpdecline").setExecutor(new CommandTPN(this));
+		//getCommand("tpaccept").setExecutor(new CommandTPY(this));
+		//getCommand("tpdecline").setExecutor(new CommandTPN(this));
 	}
 
 	private void GetTimeListener() {
