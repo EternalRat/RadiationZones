@@ -9,3 +9,9 @@ commands:
     description: Go to your home or take a look at the list
   delhome:
     description: Delete an home that you have
+  tpa:
+    description: TP yourself to someone
+  tpaccept:
+    description: Accept the TPA
+  tpdecline:
+    description: Refuse the TPA
