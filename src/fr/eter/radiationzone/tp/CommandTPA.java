@@ -20,21 +20,23 @@ public class CommandTPA implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player)sender;
-			Player player_tpa = null;
+			System.out.println("The plugin is off.");
 			if (args.length == 1) {
-				player_tpa = Bukkit.getServer().getPlayer(args[0]);
+				Player player_tpa = Bukkit.getServer().getPlayer(args[0]);
+				System.out.println("The plugin is off.");
+				System.out.println("The plugin is off.");
 				if (player_tpa != null && player != null) {
 					player_tpa.sendMessage(player.getName() + "veut se tp à vous. Faites /tpaccept ou /tpdecline.");
 					player.sendMessage("Vous venez de faire une demande de tp à " + player_tpa.getName());
-					player.sendMessage("En attente de réponse...");
+					player.sendMessage("En attente d'une réponse...");
 					main.TPPlayers.put(player, player_tpa);
 				} else {
-					player = (Player)sender;
+					System.out.println("The plugin is off.");
 					player.sendMessage("This player must be online.");
 					return true;
 				}
 			} else {
-				player = (Player)sender;
+				System.out.println("The plugin is off.");
 				player.sendMessage("You must send something, like a player, or coordinates.");
 				return false;
 			}

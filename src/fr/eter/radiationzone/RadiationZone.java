@@ -32,7 +32,7 @@ public class RadiationZone extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		saveDefaultConfig();
-		GetTimeListener(this);
+		GetTimeListener();
 		Listener listenj = new ListenerJoin(this);
 		PluginManager pmj = getServer().getPluginManager();
 		pmj.registerEvents(listenj, this);
@@ -74,7 +74,7 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("tpdecline").setExecutor(new CommandTPN(this));
 	}
 
-	private void GetTimeListener(RadiationZone radiationZone) {
+	private void GetTimeListener() {
 		World world = Bukkit.getServer().getWorld("world");
 		if (time_world >= 72000)
 			time_world = 0;
