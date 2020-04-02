@@ -54,12 +54,12 @@ public class RadiationZone extends JavaPlugin {
 			for (Player player : Players)
 				player.sendTitle("The rain will fall under 5 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
 		if (time_world >= 72000) {
-			Bukkit.getServer().getWorld(getName()).setThundering(true);
-			Bukkit.getServer().getWorld(getName()).setStorm(true);
-			Bukkit.getServer().getWorld(getName()).setWeatherDuration(6000);
+			Bukkit.getServer().getWorld("world").setThundering(true);
+			Bukkit.getServer().getWorld("world").setStorm(true);
+			Bukkit.getServer().getWorld("world").setWeatherDuration(6000);
 			for (Player player : Players)
 				player.sendTitle("The rain started to fall", "Protect yourself if you don't want to die", 10, 80, 20);
-			Bukkit.getServer().getWorld("Survival").setThunderDuration(6000);
+			Bukkit.getServer().getWorld("world").setThunderDuration(6000);
 		}
 
 		Listener checkMove = new getMovePlayer(this);
