@@ -18,8 +18,8 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 	@Override
 	public void run() {
 		Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage("§4" + Calendar.getInstance().get(Calendar.MINUTE) + " §aVoici le nombre de minutes");
-		for (Player player : main.Players)
-			Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage("Voici les personnes dans la liste &4" + player.getName());
+		for (int i = 0; i < main.Players.size(); i++)
+			Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage("Voici les personnes dans la liste &4" + main.Players.get(i).getName());
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 30 && demi == 0) {
 			rain = 0;
 			String toSend = "The rain will fall under 30 minutes";
