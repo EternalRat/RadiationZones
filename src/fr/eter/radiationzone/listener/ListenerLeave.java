@@ -3,7 +3,7 @@ package fr.eter.radiationzone.listener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import fr.eter.radiationzone.RadiationZone;
 
@@ -15,11 +15,10 @@ public class ListenerLeave implements Listener {
 	}
 
 	@EventHandler
-	public void onJoin(PlayerJoinEvent e) {
+	public void onLeave(PlayerQuitEvent e) {
 		Player player = e.getPlayer();
 		
 		if (main.getPlayers().contains(player)) {
-			System.out.println("Test");
 			main.getPlayers().remove(player);
 		}
 	}
