@@ -17,24 +17,21 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 	
 	@Override
 	public void run() {
-		Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage("§4" + Calendar.getInstance().get(Calendar.MINUTE) + " §aVoici le nombre de minutes\n" + main.Players.size());
-		for (int i = 0; i < main.Players.size(); i++)
-			Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage("Voici les personnes dans la liste &4" + main.Players.get(i).getName());
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 30 && demi == 0) {
 			rain = 0;
-			String toSend = "The rain will fall under 30 minutes";
+			String toSend = "§c§lThe rain will fall under 30 minutes§r";
 			for (Player player : main.Players)
-				player.sendTitle(toSend, "Protect yourself if you don't want to die", 10, 80, 20);
+				player.sendTitle(toSend, "§6Protect yourself if you don't want to die", 10, 80, 20);
 			demi += 1;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 45 && quart == 0) {
 			for (Player player : main.Players)
-				player.sendTitle("The rain will fall under 15 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
+				player.sendTitle("§c§lThe rain will fall under 15 minutes§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
 			quart += 1;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 55 && last == 0) {
 			for (Player player : main.Players)
-				player.sendTitle("The rain will fall under 5 minutes", "Protect yourself if you don't want to die", 10, 80, 20);
+				player.sendTitle("§c§lThe rain will fall under 5 minutes§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
 			last += 1;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 0 && rain == 0) {
@@ -43,7 +40,7 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 			Bukkit.getServer().getWorld("world").setStorm(true);
 			Bukkit.getServer().getWorld("world").setWeatherDuration(6000);
 			for (Player player : main.Players)
-				player.sendTitle("The rain started to fall", "Protect yourself if you don't want to die", 10, 80, 20);
+				player.sendTitle("§c§lThe rain started to fall§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
 			Bukkit.getServer().getWorld("world").setThunderDuration(6000);
 		}
 	}
