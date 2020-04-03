@@ -1,5 +1,7 @@
 package fr.eter.radiationzone.listener;
 
+import java.util.Calendar;
+
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -17,7 +19,7 @@ public class getMovePlayer implements Listener {
 
 	
 	public void checkWhereWalk(PlayerMoveEvent pm) {
-		if (main.time_world >= 0 && main.time_world <= 6000) {
+		if (Calendar.getInstance().get(Calendar.MINUTE) >= 0 && Calendar.getInstance().get(Calendar.MINUTE) < 5) {
 			Player p = pm.getPlayer();
 			Location loc = p.getLocation();
 			loc.setY(loc.getY() - 1);
