@@ -16,6 +16,7 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 	
 	@Override
 	public void run() {
+		Bukkit.getServer().getPlayer("Rz_RazZer").sendMessage(Calendar.getInstance().get(Calendar.MINUTE) + " Voici le nombre de minutes");
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 30) {
 			String toSend = "The rain will fall under 30 minutes";
 			for (Player player : main.Players)
