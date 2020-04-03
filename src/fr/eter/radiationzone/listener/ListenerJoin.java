@@ -31,7 +31,7 @@ public class ListenerJoin implements Listener {
 	    p.sendMessage(ChatColor.RED + "Bienvenue sur le serveur " + ChatColor.BLUE + e.getPlayer().getName() + ChatColor.RED + " !");
 		if (!main.getPlayers().contains(player)) {
 			System.out.println("Test");
-			main.getPlayers().add(player);
+			main.Players.add(player);
 		}
 		player.setGameMode(GameMode.ADVENTURE);
 	}
