@@ -24,7 +24,7 @@ import fr.eter.radiationzone.tp.CommandTPY;
 
 public class RadiationZone extends JavaPlugin {
 	
-	public List<Player> Players = new ArrayList<Player>();
+	public List<Player> Players = new ArrayList<>();
 	public Map<Player, Player> TPPlayers = new HashMap<>();
 	
 	@Override
