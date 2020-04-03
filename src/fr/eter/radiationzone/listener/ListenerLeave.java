@@ -18,7 +18,9 @@ public class ListenerLeave implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
 		
-		if (main.getPlayers().contains(player))
+		if (main.getPlayers().contains(player)) {
+			System.out.println("Test");
 			main.getPlayers().remove(player);
+		}
 	}
 }

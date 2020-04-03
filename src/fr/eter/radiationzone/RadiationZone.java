@@ -47,14 +47,14 @@ public class RadiationZone extends JavaPlugin {
 		Listener listenj = new ListenerJoin(this);
 		PluginManager pmj = getServer().getPluginManager();
 		pmj.registerEvents(listenj, this);
-		Listener listenl = new ListenerLeave(this);
-		PluginManager pml = getServer().getPluginManager();
-		pml.registerEvents(listenl, this);
 		Listener getDamage = new ListenerDamage();
 		getServer().getPluginManager().registerEvents(getDamage, this);
 		Listener checkMove = new getMovePlayer(this);
 		PluginManager checkMove2 = getServer().getPluginManager();
 		checkMove2.registerEvents(checkMove, this);
+		Listener listenl = new ListenerLeave(this);
+		PluginManager pml = getServer().getPluginManager();
+		pml.registerEvents(listenl, this);
 	}
 	
 	public List<Player> getPlayers() {
