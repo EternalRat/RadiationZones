@@ -21,7 +21,7 @@ public class CommandHome implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player)sender;
-			if (args.length == 2) {
+			if (args.length == 1) {
 				if (!main.getConfig().contains("config.home." + player.getName()))
 					main.getConfig().addDefault("config.home", player.getName());
 				if (main.getConfig().contains("config.home." + player.getName() + "." + args[0])) {

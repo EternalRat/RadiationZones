@@ -16,7 +16,7 @@ public class CommandDelHome implements CommandExecutor {
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
-		if (sender instanceof Player) {
+		if (sender instanceof Player && args.length == 1) {
 			Player player = (Player)sender;
 			if (!main.getConfig().contains("config.home." + player.getName()))
 				return false;
