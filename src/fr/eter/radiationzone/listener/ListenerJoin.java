@@ -1,6 +1,5 @@
 package fr.eter.radiationzone.listener;
 
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,6 +25,5 @@ public class ListenerJoin implements Listener {
 		Player p = e.getPlayer();
 	    p.sendMessage(ChatColor.RED + "Bienvenue sur le serveur " + ChatColor.BLUE + e.getPlayer().getName() + ChatColor.RED + " !");
 		if (!main.getPlayers().contains(player)) main.getPlayers().add(player);
-		player.setGameMode(GameMode.ADVENTURE);
 	}
 }

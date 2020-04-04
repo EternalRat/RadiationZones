@@ -16,7 +16,6 @@ public class getMovePlayer implements Listener {
 	public getMovePlayer(RadiationZone radiationZone) {
 		this.main = radiationZone;
 	}
-
 	
 	public void checkWhereWalk(PlayerMoveEvent pm) {
 		if (Calendar.getInstance().get(Calendar.MINUTE) >= 0 && Calendar.getInstance().get(Calendar.MINUTE) < 5) {
@@ -25,7 +24,7 @@ public class getMovePlayer implements Listener {
 			loc.setY(loc.getY() - 1);
 			Block bloc = loc.getBlock();
 			if (bloc.getLightLevel() == 15)
-				p.kickPlayer(p.getName());
+				p.setHealth(0);
 		}
 	}
 }
