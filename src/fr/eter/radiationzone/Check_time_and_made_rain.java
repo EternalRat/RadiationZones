@@ -35,6 +35,9 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 0 && rain == 0) {
 			rain = 1;
+			demi = 0;
+			quart = 0;
+			last = 0;
 			Bukkit.getServer().getWorld("world").setThundering(true);
 			Bukkit.getServer().getWorld("world").setStorm(true);
 			Bukkit.getServer().getWorld("world").setWeatherDuration(6000);

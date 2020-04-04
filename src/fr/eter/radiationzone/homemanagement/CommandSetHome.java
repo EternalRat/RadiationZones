@@ -16,6 +16,7 @@ public class CommandSetHome implements CommandExecutor {
 		this.main = main;
 	}
 	
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player)sender;

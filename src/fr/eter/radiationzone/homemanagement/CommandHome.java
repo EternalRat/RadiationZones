@@ -18,6 +18,7 @@ public class CommandHome implements CommandExecutor {
 	}
 
 	@SuppressWarnings("null")
+	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player)sender;
