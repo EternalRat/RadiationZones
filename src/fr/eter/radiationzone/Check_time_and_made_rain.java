@@ -18,24 +18,23 @@ public class Check_time_and_made_rain extends BukkitRunnable {
 	@Override
 	public void run() {
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 30 && demi == 0) {
-			rain = 0;
-			String toSend = "§c§lThe rain will fall under 30 minutes§r";
 			for (Player player : main.Players)
-				player.sendTitle(toSend, "§6Protect yourself if you don't want to die", 10, 80, 20);
-			demi += 1;
+				player.sendTitle("§c§lThe rain will fall under 30 minutes§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
+			demi = 1;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 45 && quart == 0) {
 			for (Player player : main.Players)
 				player.sendTitle("§c§lThe rain will fall under 15 minutes§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
-			quart += 1;
+			quart = 1;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 55 && last == 0) {
 			for (Player player : main.Players)
 				player.sendTitle("§c§lThe rain will fall under 5 minutes§r", "§6Protect yourself if you don't want to die", 10, 80, 20);
-			last += 1;
+			last = 1;
+			rain = 0;
 		}
 		if (Calendar.getInstance().get(Calendar.MINUTE) == 0 && rain == 0) {
-			rain += 1;
+			rain = 1;
 			Bukkit.getServer().getWorld("world").setThundering(true);
 			Bukkit.getServer().getWorld("world").setStorm(true);
 			Bukkit.getServer().getWorld("world").setWeatherDuration(6000);

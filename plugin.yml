@@ -15,3 +15,7 @@ commands:
     description: Accept the TPA
   tpdecline:
     description: Refuse the TPA
+  seeplayers:
+    description: See the list of connected players
+  seeinventory:
+    description: See the inventory of a player
