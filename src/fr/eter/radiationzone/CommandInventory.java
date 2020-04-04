@@ -20,7 +20,7 @@ public class CommandInventory implements CommandExecutor {
 					StringBuilder items_names = new StringBuilder();
 					for (int i = 0; i < inv.getSize(); i++)
 						if (inv.getItem(i) != null)
-							items_names.append("§4" + inv.getItem(i).toString() + "\n");
+							items_names.append("§4" + inv.getItem(i).getItemMeta().getDisplayName() + "\n");
 					send.sendMessage(items_names.toString());
 				}
 			}
