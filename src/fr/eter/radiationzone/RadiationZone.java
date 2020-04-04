@@ -38,7 +38,7 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("sethome").setExecutor(new CommandSetHome(this));
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
 		getCommand("seeplayers").setExecutor(new CommandSeePlayer(this));
-		getCommand("seeinventory").setExecutor(new CommandInventory(this));
+		getCommand("seeinventory").setExecutor(new CommandInventory());
 		
 		ListenerList();
 		Check_time_and_made_rain check = new Check_time_and_made_rain(this);

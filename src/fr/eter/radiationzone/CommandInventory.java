@@ -1,20 +1,29 @@
 package fr.eter.radiationzone;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 public class CommandInventory implements CommandExecutor {
 
-	private RadiationZone main;
-
-	public CommandInventory(RadiationZone radiationZone) {
-		this.main = radiationZone;
-	}
-
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
-		// TODO Auto-generated method stub
+		if (sender instanceof Player) {
+			Player send = (Player)sender;
+			if (args.length == 1) {
+				if (Bukkit.getServer().getPlayer(args[0]) instanceof Player) {
+					Player player = Bukkit.getServer().getPlayer(args[0]);
+					Inventory inv = player.getInventory();
+					StringBuilder items_names = new StringBuilder();
+					for (int i = 0; i < inv.getSize(); i++)
+						items_names.append("§4" + inv.getItem(i) + "\n");
+					send.sendMessage(items_names.toString());
+				}
+			}
+		}
 		return false;
 	}
 

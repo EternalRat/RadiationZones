@@ -15,7 +15,7 @@ public class CommandSeePlayer implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
-		if (sender instanceof Player && sender.getName() == "Rz_RazZer") {
+		if (sender instanceof Player) {
 			Player play = (Player)sender;
 			for (Player player : main.Players)
 				play.sendMessage("§4" + player.getName());
