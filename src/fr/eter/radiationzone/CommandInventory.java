@@ -19,7 +19,8 @@ public class CommandInventory implements CommandExecutor {
 					Inventory inv = player.getInventory();
 					StringBuilder items_names = new StringBuilder();
 					for (int i = 0; i < inv.getSize(); i++)
-						items_names.append("§4" + inv.getItem(i) + "\n");
+						if (inv.getItem(i) != null)
+							items_names.append("§4" + inv.getItem(i).toString() + "\n");
 					send.sendMessage(items_names.toString());
 				}
 			}
