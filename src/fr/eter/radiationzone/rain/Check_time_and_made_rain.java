@@ -1,10 +1,12 @@
-package fr.eter.radiationzone;
+package fr.eter.radiationzone.rain;
 
 import java.util.Calendar;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+
+import fr.eter.radiationzone.RadiationZone;
 
 public class Check_time_and_made_rain extends BukkitRunnable {
 

@@ -11,6 +11,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import fr.eter.radiationzone.basic.CommandInventory;
+import fr.eter.radiationzone.basic.CommandSeePlayer;
 import fr.eter.radiationzone.homemanagement.CommandDelHome;
 import fr.eter.radiationzone.homemanagement.CommandHome;
 import fr.eter.radiationzone.homemanagement.CommandSetHome;
@@ -18,6 +20,7 @@ import fr.eter.radiationzone.listener.ListenerDamage;
 import fr.eter.radiationzone.listener.ListenerJoin;
 import fr.eter.radiationzone.listener.ListenerLeave;
 import fr.eter.radiationzone.listener.getMovePlayer;
+import fr.eter.radiationzone.rain.Check_time_and_made_rain;
 import fr.eter.radiationzone.tp.CommandTPA;
 import fr.eter.radiationzone.tp.CommandTPN;
 import fr.eter.radiationzone.tp.CommandTPY;

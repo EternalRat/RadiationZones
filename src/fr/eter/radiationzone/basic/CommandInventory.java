@@ -1,4 +1,4 @@
-package fr.eter.radiationzone;
+package fr.eter.radiationzone.basic;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
