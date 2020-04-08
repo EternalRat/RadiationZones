@@ -16,6 +16,7 @@ import fr.eter.radiationzone.basic.CommandSeePlayer;
 import fr.eter.radiationzone.homemanagement.CommandDelHome;
 import fr.eter.radiationzone.homemanagement.CommandHome;
 import fr.eter.radiationzone.homemanagement.CommandSetHome;
+import fr.eter.radiationzone.items.Items;
 import fr.eter.radiationzone.listener.ListenerDamage;
 import fr.eter.radiationzone.listener.ListenerJoin;
 import fr.eter.radiationzone.listener.ListenerLeave;
@@ -26,6 +27,8 @@ import fr.eter.radiationzone.tp.CommandTPN;
 import fr.eter.radiationzone.tp.CommandTPY;
 
 public class RadiationZone extends JavaPlugin {
+	
+	public static JavaPlugin instance;
 	
 	public List<Player> Players = new ArrayList<>();
 	public Map<Player, Player> TPPlayers = new HashMap<>();
@@ -49,17 +52,18 @@ public class RadiationZone extends JavaPlugin {
 	}
 
 	private void ListenerList() {
+		instance = this;
 		Listener listenj = new ListenerJoin(this);
-		PluginManager pmj = getServer().getPluginManager();
-		pmj.registerEvents(listenj, this);
-		Listener getDamage = new ListenerDamage();
-		getServer().getPluginManager().registerEvents(getDamage, this);
-		Listener checkMove = new getMovePlayer(this);
-		PluginManager checkMove2 = getServer().getPluginManager();
-		checkMove2.registerEvents(checkMove, this);
 		Listener listenl = new ListenerLeave(this);
-		PluginManager pml = getServer().getPluginManager();
-		pml.registerEvents(listenl, this);
+		Listener getDamage = new ListenerDamage();
+		Listener checkMove = new getMovePlayer(this);
+		PluginManager pm = getServer().getPluginManager();
+		
+		pm.registerEvents(listenj, this);
+		pm.registerEvents(getDamage, this);
+		pm.registerEvents(checkMove, this);
+		pm.registerEvents(listenl, this);
+		pm.registerEvents(new Items(), this);
 	}
 	
 	public List<Player> getPlayers() {

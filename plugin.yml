@@ -3,6 +3,10 @@ version: 2.0
 author: EternalRat
 depend: [ AdditionsAPI ]
 main: fr.eter.radiationzone.RadiationZone
+permissions:
+   lead:
+      description: Made for the owner
+      default: op
 commands:
   sethome:
     description: Set an home somewhere 
@@ -18,5 +22,7 @@ commands:
     description: Refuse the TPA
   seeplayers:
     description: See the list of connected players
+    permission: lead
   seeinventory:
     description: See the inventory of a player
+    permission: lead

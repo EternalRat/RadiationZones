@@ -19,6 +19,12 @@ public class ListenerJoin implements Listener {
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
+		player.setPlayerListHeaderFooter("§eBienvenue sur le serveur §4RadiationZone", "Amusez vous bien !");
+		if (player.isOp()) {
+			player.setPlayerListName("§4[Fondateur] §e" + player.getName());
+		} else {
+			player.setPlayerListName("§e[Joueur] " + player.getName());
+		}
 		player.setFoodLevel(20);
 		player.setHealth(20);
 		
