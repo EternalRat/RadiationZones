@@ -12,10 +12,11 @@ import net.md_5.bungee.api.ChatColor;
 
 public class BEDROCK_BLOCKS extends CustomTool {
 
+	@SuppressWarnings("deprecation")
 	public BEDROCK_BLOCKS() {
-		super(Material.BEDROCK, 1, (short)0, "radiationzone:new_bedrock");
+		super(Material.LEGACY_BEDROCK, 1, (short)0, "radiationzone:new_bedrock");
 		setDisplayName(ChatColor.BLACK + "Bedrock");
-		setMaterial(Material.BEDROCK);
+		setMaterial(Material.LEGACY_BEDROCK);
 		
 		setUnbreakable(true);
 		
