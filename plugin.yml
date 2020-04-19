@@ -2,6 +2,7 @@ name: RadiationZone
 version: 2.0
 author: EternalRat
 depend: [ AdditionsAPI ]
+api-version: 1.13
 main: fr.eter.radiationzone.RadiationZone
 permissions:
    lead:

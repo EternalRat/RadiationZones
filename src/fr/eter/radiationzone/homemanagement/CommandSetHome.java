@@ -33,6 +33,8 @@ public class CommandSetHome implements CommandExecutor {
 				main.getConfig().set("config.home."  + player.getName() + "." + args[0] + ".x", loc.getX());
 				main.getConfig().set("config.home."  + player.getName() + "." + args[0] + ".y", loc.getY());
 				main.getConfig().set("config.home."  + player.getName() + "." + args[0] + ".z", loc.getZ());
+				main.getConfig().set("config.home."  + player.getName() + "." + args[0] + ".pitch", loc.getPitch());
+				main.getConfig().set("config.home."  + player.getName() + "." + args[0] + ".yaw", loc.getYaw());
 				main.saveConfig();
 				player.sendMessage("The home " + args[0] + " has been created");
 				return true;

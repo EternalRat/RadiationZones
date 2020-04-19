@@ -5,18 +5,17 @@ import java.util.List;
 
 import org.bukkit.Material;
 
-import com.chrismin13.additionsapi.items.CustomTool;
+import com.chrismin13.additionsapi.items.CustomItem;
 import com.chrismin13.additionsapi.recipes.CustomShapedRecipe;
 
 import net.md_5.bungee.api.ChatColor;
 
-public class BEDROCK_BLOCKS extends CustomTool {
+public class BEDROCK_BLOCKS extends CustomItem {
 
-	@SuppressWarnings("deprecation")
 	public BEDROCK_BLOCKS() {
-		super(Material.LEGACY_BEDROCK, 1, (short)0, "radiationzone:new_bedrock");
+		super(Material.BEDROCK, 1, (short)0, "radiationzone:new_bedrock");
 		setDisplayName(ChatColor.BLACK + "Bedrock");
-		setMaterial(Material.LEGACY_BEDROCK);
+		setMaterial(Material.BEDROCK);
 		
 		setUnbreakable(true);
 		

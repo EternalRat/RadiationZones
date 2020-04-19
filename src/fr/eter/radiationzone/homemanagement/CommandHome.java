@@ -31,6 +31,8 @@ public class CommandHome implements CommandExecutor {
 					loc.setX(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".x"));
 					loc.setY(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".y"));
 					loc.setZ(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".z"));
+					loc.setPitch((float) main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".y"));
+					loc.setYaw((float) main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".z"));
 					player.teleport(loc);
 					return true;
 				}
