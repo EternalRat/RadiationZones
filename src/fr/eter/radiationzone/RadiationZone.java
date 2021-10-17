@@ -11,24 +11,27 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.eter.radiationzone.basic.CommandInventory;
-import fr.eter.radiationzone.basic.CommandSeePlayer;
-import fr.eter.radiationzone.homemanagement.CommandDelHome;
-import fr.eter.radiationzone.homemanagement.CommandHome;
-import fr.eter.radiationzone.homemanagement.CommandSetHome;
+import fr.eter.radiationzone.commands.basic.CommandInventory;
+import fr.eter.radiationzone.commands.basic.CommandSeePlayer;
+import fr.eter.radiationzone.commands.homemanagement.CommandDelHome;
+import fr.eter.radiationzone.commands.homemanagement.CommandHome;
+import fr.eter.radiationzone.commands.homemanagement.CommandSetHome;
+import fr.eter.radiationzone.commands.tp.CommandTPA;
+import fr.eter.radiationzone.commands.tp.CommandTPN;
+import fr.eter.radiationzone.commands.tp.CommandTPY;
 import fr.eter.radiationzone.items.Items;
 import fr.eter.radiationzone.listener.ListenerDamage;
 import fr.eter.radiationzone.listener.ListenerJoin;
 import fr.eter.radiationzone.listener.ListenerLeave;
-import fr.eter.radiationzone.listener.getMovePlayer;
-import fr.eter.radiationzone.rain.Check_time_and_made_rain;
-import fr.eter.radiationzone.tp.CommandTPA;
-import fr.eter.radiationzone.tp.CommandTPN;
-import fr.eter.radiationzone.tp.CommandTPY;
+import fr.eter.radiationzone.listener.ListenerMove;
+import fr.eter.radiationzone.listener.ListenerRevival;
+import fr.eter.radiationzone.utils.rain.CheckTime;
+import fr.eter.radiationzone.utils.rain.ToxicRain;
 
 public class RadiationZone extends JavaPlugin {
 	
 	public static JavaPlugin instance;
+	public final ToxicRain toxicRain = new ToxicRain(this);
 	
 	public List<Player> Players = new ArrayList<>();
 	public Map<Player, Player> TPPlayers = new HashMap<>();
@@ -47,7 +50,7 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("seeinventory").setExecutor(new CommandInventory());
 		
 		ListenerList();
-		Check_time_and_made_rain check = new Check_time_and_made_rain(this);
+		CheckTime check = new CheckTime(this);
 		check.runTaskTimer(this, 0, 20);
 	}
 
@@ -56,11 +59,13 @@ public class RadiationZone extends JavaPlugin {
 		Listener listenj = new ListenerJoin(this);
 		Listener listenl = new ListenerLeave(this);
 		Listener getDamage = new ListenerDamage();
-		Listener checkMove = new getMovePlayer(this);
+		Listener checkMove = new ListenerMove(this);
+		Listener revival = new ListenerRevival();
 		PluginManager pm = getServer().getPluginManager();
 		
 		pm.registerEvents(listenj, this);
 		pm.registerEvents(getDamage, this);
+		pm.registerEvents(revival, this);
 		pm.registerEvents(checkMove, this);
 		pm.registerEvents(listenl, this);
 		pm.registerEvents(new Items(), this);

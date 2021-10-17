@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.homemanagement;
+package fr.eter.radiationzone.commands.homemanagement;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

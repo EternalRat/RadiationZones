@@ -23,7 +23,7 @@ public class ROD_OF_THE_KING extends CustomItem {
 		
 		List <String> lore = new ArrayList<>();
 		lore.add("");
-		lore.add(ChatColor.DARK_PURPLE + "This rod has been forged by killing\nthe famous demon Herobrine.");
+		lore.add(ChatColor.DARK_PURPLE + "This rod has been forged after killing\nthe famous demon Herobrine.");
 		lore.add(ChatColor.DARK_PURPLE + "His power were such dreaded that they\nscealed this rod in the middle of a\nvolcano for a long time.");
 		lore.add(ChatColor.DARK_PURPLE + "Now, his power are in your hand, be\ncareful, it can be really helpful, but\nit can also devore your spirit and your soul.");
 		lore.add("");

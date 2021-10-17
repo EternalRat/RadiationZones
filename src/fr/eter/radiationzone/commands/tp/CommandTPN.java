@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.tp;
+package fr.eter.radiationzone.commands.tp;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

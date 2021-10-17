@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.homemanagement;
+package fr.eter.radiationzone.commands.homemanagement;
 
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -39,7 +39,7 @@ public class CommandSetHome implements CommandExecutor {
 				player.sendMessage("The home " + args[0] + " has been created");
 				return true;
 			}
-			player.sendMessage("You must give us a name please.");
+			player.sendMessage("You must give a name.");
 		}
 		return false;
 	}

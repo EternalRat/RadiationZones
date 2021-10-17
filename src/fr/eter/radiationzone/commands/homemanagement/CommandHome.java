@@ -1,6 +1,8 @@
-package fr.eter.radiationzone.homemanagement;
+package fr.eter.radiationzone.commands.homemanagement;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -16,7 +18,6 @@ public class CommandHome implements CommandExecutor {
 		this.main = main;
 	}
 
-	@SuppressWarnings("null")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		if (sender instanceof Player) {
@@ -25,12 +26,12 @@ public class CommandHome implements CommandExecutor {
 				if (!main.getConfig().contains("config.home." + player.getName()))
 					main.getConfig().addDefault("config.home", player.getName());
 				if (main.getConfig().contains("config.home." + player.getName() + "." + args[0])) {
-					main.getConfig().addDefault("config.home." + player.getName(), args[0]);
-					Location loc = null;
-					loc.setWorld(player.getServer().getWorld(main.getConfig().getString("config.home."  + player.getName() + "." + args[0] + ".world")));
-					loc.setX(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".x"));
-					loc.setY(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".y"));
-					loc.setZ(main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".z"));
+					//main.getConfig().addDefault("config.home." + player.getName(), args[0]);
+					World world = Bukkit.getWorld(main.getConfig().getString("config.home."  + player.getName() + "." + args[0] + ".world"));
+					double posX = main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".x");
+					double posY = main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".y");
+					double posZ = main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".z");
+					Location loc = new Location(world, posX, posY, posZ);
 					loc.setPitch((float) main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".y"));
 					loc.setYaw((float) main.getConfig().getDouble("config.home."  + player.getName() + "." + args[0] + ".z"));
 					player.teleport(loc);
@@ -39,9 +40,9 @@ public class CommandHome implements CommandExecutor {
 				player.sendMessage("This home doesn't exist");
 			} else if (args.length == 0){
 				StringBuilder home = new StringBuilder();
-				for (String part : main.getConfig().getStringList("config.home."  + player.getName()))
-					home.append(part + " ");
-				player.sendMessage("Voici votre liste de home : " + home.toString());
+				for (Object part : main.getConfig().getList("config.home."  + player.getName() + ".list"))
+					home.append(part.toString() + " ");
+				player.sendMessage("Voici votre liste de home : " + home.toString().trim().replaceAll(" ", ", "));
 			}
 		}
 		return false;
