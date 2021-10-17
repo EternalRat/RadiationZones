@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.items.customs;
+package fr.eter.radiationzone.customs.items;
 
 import java.util.ArrayList;
 import java.util.List;

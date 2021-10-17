@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.items.bedrock;
+package fr.eter.radiationzone.customs.tools.bedrock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +11,16 @@ import com.chrismin13.additionsapi.recipes.CustomShapedRecipe;
 import net.md_5.bungee.api.ChatColor;
 import us.fihgu.toolbox.item.DamageableItem;
 
-public class BEDROCK_AXE extends CustomTexturedTool {
+public class BEDROCK_SHOVEL extends CustomTexturedTool {
 
-	public BEDROCK_AXE() {
-		super(DamageableItem.DIAMOND_AXE, "radiationzone:bedrock_axe", "bedrock_axe");
+	public BEDROCK_SHOVEL() {
+		super(DamageableItem.DIAMOND_SHOVEL, "radiationzone:bedrock_shovel", "bedrock_shovel");
 
 		setDisplayName(ChatColor.BLACK + "Bedrock Sword");
 		
 		List <String> lore = new ArrayList<>();
 		lore.add("");
-		lore.add(ChatColor.BLACK + "This axe was forged by a demon with Bedrocks block.");
+		lore.add(ChatColor.BLACK + "This showel was forged by a demon with Bedrocks block.");
 		lore.add("");
 		setLore(lore);
 	
@@ -29,7 +29,7 @@ public class BEDROCK_AXE extends CustomTexturedTool {
 		setToolLikeAttributes(true);
 		setFakeDurability(9999);
 
-		addAttackDamage(18d);
+		addAttackDamage(7d);
 		addAttackSpeed(2d);
 
 		List<CustomShapedRecipe> recipes = new ArrayList<CustomShapedRecipe>();
@@ -38,7 +38,7 @@ public class BEDROCK_AXE extends CustomTexturedTool {
 		itemRecipe.setIngredient('3', Material.AIR);
 		itemRecipe.setIngredient('1', Material.BEDROCK);
 		itemRecipe.setIngredient('2', Material.STICK);
-		recipes.add(new CustomShapedRecipe(itemRecipe).setShape("311", "321", "323"));
+		recipes.add(new CustomShapedRecipe(itemRecipe).setShape("313", "323", "323"));
 		
 		addAllCustomRecipes(recipes);
 		

@@ -1,23 +1,22 @@
-package fr.eter.radiationzone.items;
+package fr.eter.radiationzone.customs;
 
 import org.bukkit.event.Listener;
 
 import com.chrismin13.additionsapi.events.AdditionsAPIInitializationEvent;
 
-import fr.eter.radiationzone.items.bedrock.BEDROCK_AXE;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_BLOCKS;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_BOOTS;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_CHESTPLATE;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_HELMET;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_LEGGINGS;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_PICKAXE;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_SHOVEL;
-import fr.eter.radiationzone.items.bedrock.BEDROCK_SWORD;
-import fr.eter.radiationzone.items.customs.ROD_OF_THE_KING;
-
 import org.bukkit.event.EventHandler;
 
 import fr.eter.radiationzone.RadiationZone;
+import fr.eter.radiationzone.customs.items.ROD_OF_THE_KING;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_AXE;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_BLOCKS;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_BOOTS;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_CHESTPLATE;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_HELMET;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_LEGGINGS;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_PICKAXE;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_SHOVEL;
+import fr.eter.radiationzone.customs.tools.bedrock.BEDROCK_SWORD;
 
 public class Items implements Listener {
 

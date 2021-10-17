@@ -1,4 +1,4 @@
-package fr.eter.radiationzone.items.bedrock;
+package fr.eter.radiationzone.customs.tools.bedrock;
 
 import java.util.ArrayList;
 import java.util.List;

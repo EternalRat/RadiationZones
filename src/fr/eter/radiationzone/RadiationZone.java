@@ -11,15 +11,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.eter.radiationzone.commands.basic.CommandInventory;
-import fr.eter.radiationzone.commands.basic.CommandSeePlayer;
 import fr.eter.radiationzone.commands.homemanagement.CommandDelHome;
 import fr.eter.radiationzone.commands.homemanagement.CommandHome;
 import fr.eter.radiationzone.commands.homemanagement.CommandSetHome;
 import fr.eter.radiationzone.commands.tp.CommandTPA;
 import fr.eter.radiationzone.commands.tp.CommandTPN;
 import fr.eter.radiationzone.commands.tp.CommandTPY;
-import fr.eter.radiationzone.items.Items;
+import fr.eter.radiationzone.customs.Items;
 import fr.eter.radiationzone.listener.ListenerDamage;
 import fr.eter.radiationzone.listener.ListenerJoin;
 import fr.eter.radiationzone.listener.ListenerLeave;
@@ -46,8 +44,6 @@ public class RadiationZone extends JavaPlugin {
 		getCommand("home").setExecutor(new CommandHome(this));
 		getCommand("sethome").setExecutor(new CommandSetHome(this));
 		getCommand("delhome").setExecutor(new CommandDelHome(this));
-		getCommand("seeplayers").setExecutor(new CommandSeePlayer(this));
-		getCommand("seeinventory").setExecutor(new CommandInventory());
 		
 		ListenerList();
 		CheckTime check = new CheckTime(this);

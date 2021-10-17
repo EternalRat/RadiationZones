@@ -1,44 +1,42 @@
-package fr.eter.radiationzone.items.bedrock;
+package fr.eter.radiationzone.customs.tools.bedrock;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
 
-import com.chrismin13.additionsapi.items.textured.CustomTexturedTool;
+import com.chrismin13.additionsapi.items.textured.CustomTexturedArmor;
 import com.chrismin13.additionsapi.recipes.CustomShapedRecipe;
 
 import net.md_5.bungee.api.ChatColor;
 import us.fihgu.toolbox.item.DamageableItem;
 
-public class BEDROCK_SHOVEL extends CustomTexturedTool {
+public class BEDROCK_HELMET extends CustomTexturedArmor {
 
-	public BEDROCK_SHOVEL() {
-		super(DamageableItem.DIAMOND_SHOVEL, "radiationzone:bedrock_shovel", "bedrock_shovel");
+	public BEDROCK_HELMET() {
+		super(DamageableItem.DIAMOND_HELMET, "radiationzone:bedrock_helmet", "bedrock_helmet");
 
 		setDisplayName(ChatColor.BLACK + "Bedrock Sword");
 		
 		List <String> lore = new ArrayList<>();
 		lore.add("");
-		lore.add(ChatColor.BLACK + "This showel was forged by a demon with Bedrocks block.");
+		lore.add(ChatColor.BLACK + "This helmet was forged by a demon with Bedrocks block.");
 		lore.add("");
 		setLore(lore);
 	
 		setUnbreakable(true);
 		setUnbreakableVisibility(false);
-		setToolLikeAttributes(true);
 		setFakeDurability(9999);
 
-		addAttackDamage(7d);
-		addAttackSpeed(2d);
+		addArmor(10d);
+		addArmorToughness(5d);
 
 		List<CustomShapedRecipe> recipes = new ArrayList<CustomShapedRecipe>();
 		
 		CustomShapedRecipe itemRecipe = new CustomShapedRecipe();
-		itemRecipe.setIngredient('3', Material.AIR);
+		itemRecipe.setIngredient('2', Material.AIR);
 		itemRecipe.setIngredient('1', Material.BEDROCK);
-		itemRecipe.setIngredient('2', Material.STICK);
-		recipes.add(new CustomShapedRecipe(itemRecipe).setShape("313", "323", "323"));
+		recipes.add(new CustomShapedRecipe(itemRecipe).setShape("111", "121", "222"));
 		
 		addAllCustomRecipes(recipes);
 		
