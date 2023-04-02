@@ -4,7 +4,7 @@ This plugin has been made to learn how Minecraft works.
 It was my first plugin and it's still not finish yet.
 I'm of course planning to finish it when I'll have some free time or just when I'll know what I wanna add to it.
 
-##Main goal
+## Main goal
 
 The final goal of this plugin will be to create a toxic environment where being under the rain will make you die.
 
